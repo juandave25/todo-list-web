@@ -1,3 +1,25 @@
-<div>
-
+<div *ngIf="showForm">
+  <div>Task to update: {{ selectedTask.id }}</div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Id:</label>
+    <input type="text" class="form-control" id="id" [(ngModel)]="selectedTask.id" disabled>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="selectedTask.name">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <input type="text" class="form-control" id="description" [(ngModel)]="selectedTask.description">
+  </div>
+  <div class="mb-3">
+    <label for="priority" class="form-label">Priority:</label>
+    <select class="form-select" id="priority" rows="3"  name="priority" [(ngModel)]="selectedTask.priority">
+      <option value="">Select one priority</option>
+      <option value="1">High</option>
+      <option value="2">Medium</option>
+      <option value="2">Low</option>
+  </select>
+  </div>
+  <button (click)="updateTask()" id="btn-save" class="btn btn-success">Save</button>
 </div>

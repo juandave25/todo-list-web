@@ -23,11 +23,11 @@ export class AddTaskComponent {
 
   constructor(private taskService: TaskService) {}
 
-  saveTutorial(): void {
+  saveTask(): void {
     const data = {
       name: this.task.name,
       description: this.task.description,
-      priority: this.task.priority
+      priority: this.task.priority,
     };
 
     this.taskService.add(data)
@@ -40,7 +40,7 @@ export class AddTaskComponent {
       });
   }
 
-  newTutorial(): void {
+  newTask(): void {
     this.submitted = false;
     this.task = {
       name: '',

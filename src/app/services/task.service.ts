@@ -11,7 +11,7 @@ const baseUrl = 'http://localhost:5000/api/v1/task';
 
 export class TaskService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<Task[]> {
     return this.http.get<Task[]>(baseUrl);
@@ -25,7 +25,7 @@ export class TaskService {
     return this.http.post(baseUrl, data);
   }
 
-  update(id: any, data: any): Observable<any> {
+  update(data: any, id: number | undefined): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 
