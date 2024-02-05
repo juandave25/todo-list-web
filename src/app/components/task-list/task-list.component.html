@@ -1,0 +1,47 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Priority</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tasks">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.date}}</td>
+        <td><span class="badge bg-primary text-white">{{item.priority}}</span></td>
+        <td>
+          <div class="btn-column-tools">
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-danger" id="btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="showDialog(item.id || 0)" >Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal" tabindex="-1" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to eliminate this task?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deleteTask(true)">Yes</button>
+        <button type="button" class="btn btn-secondary" #closebutton data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

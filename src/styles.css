@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+#btn-save{
+  margin-top: 10px;
+}
